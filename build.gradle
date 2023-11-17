@@ -16,11 +16,14 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.postgresql:postgresql:42.2.23'
-	implementation 'org.hibernate:hibernate-core:5.5.6.Final'
-	implementation 'org.projectlombok:lombok:1.18.28'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '3.1.5'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '3.1.5'
+	implementation group: 'org.springframework', name: 'spring-context', version: '6.0.13'
+	implementation group: 'org.postgresql', name: 'postgresql', version: '42.6.0'
+	implementation group: 'org.hibernate', name: 'hibernate-core', version: '6.3.0.Final', ext: 'pom'
+	implementation group: 'jakarta.persistence', name: 'jakarta.persistence-api', version: '3.1.0'
+	implementation 'net.bramp.ffmpeg:ffmpeg:0.8.0'
+	compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
 }
 
 tasks.named('bootBuildImage') {

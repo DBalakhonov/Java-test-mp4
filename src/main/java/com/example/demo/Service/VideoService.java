@@ -1,19 +1,17 @@
 package com.example.demo.Service;
 
-import com.example.demo.Repository.VideoRepository;
-import org.springframework.stereotype.Service;
+import com.example.demo.DTO.CreateVideoBackInfo;
+import com.example.demo.DTO.UpdateOrDeleteVideoResult;
+import com.example.demo.DTO.UpdateVideoResolutionDTO;
+import com.example.demo.DTO.VideoDTO;
+import org.springframework.web.multipart.MultipartFile;
 
-@Service
-public class VideoService {
-    private final VideoRepository videoRepository;
+import java.io.IOException;
+import java.util.UUID;
 
-    public VideoService(VideoRepository videoRepository) {
-        this.videoRepository = videoRepository;
-    }
-
-    public Long uploadVideo() {
-        return 1L;
-    }
-
-
+public interface VideoService {
+    CreateVideoBackInfo uploadVideo(MultipartFile video);
+    VideoDTO getVideoById(UUID id);
+    UpdateOrDeleteVideoResult updateVideoResolution(UpdateVideoResolutionDTO request, UUID id) throws IOException;
+    UpdateOrDeleteVideoResult deleteVideo(UUID id);
 }
