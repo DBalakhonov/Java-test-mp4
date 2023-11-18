@@ -1,0 +1,117 @@
+openapi: 3.0.3
+info:
+  title: API Documentation
+  version: '1.0'
+servers:
+  - url: http://localhost:8080/
+paths:
+  /file:
+    post:
+      tags:
+        - Видео
+      summary: 'Загрузка видео'
+      operationId: uploadVideo
+      requestBody:
+        content:
+          application/form-data:
+            schema:
+              $ref: '#/components/NewVideos'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/CreateVideoBackInfo'
+  /file/{id}:
+    get:
+      summary: 'Получение информации о видео по ID'
+      operationId: getVideo
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: UUID
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/VideoDTO'
+    delete:
+      summary: 'Удаление видео по ID'
+      operationId: deleteVideo
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: UUID
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/UpdateOrDeleteVideoResult'
+    patch:
+      summary: 'Изменение разрешения видео'
+      operationId: updateResolutionVideo
+      requestBody:
+        content:
+          application/form-data:
+            schema:
+              $ref: '#/components/UpdateVideoResolutionDTO'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/UpdateOrDeleteVideoResult'
+
+components:
+    NewVideos:
+      type: object
+      properties:
+        video.mp4:
+          type: multipartfile
+          description: 'видео'
+    CreateVideoBackInfo:
+      type: object
+      properties:
+        id:
+          type: UUID
+          description: 'Уникальный Id видео в БД'
+    VideoDTO:
+      type: object
+      properties:
+        id:
+          type: UUID
+          description: 'Уникальный Id видео в БД'
+        filename:
+          type: String
+          description: 'Имя файла'
+        processing:
+          type: Boolean
+          description: 'Идет ли операция над видео (true/false)'
+          processingsucces:
+            type: Boolean
+            description: 'Как завершилась последняя операция над видео (true/false/null)'
+    UpdateOrDeleteVideoResult:
+      type: object
+      properties:
+        success:
+          type: Boolean
+          description: 'Как завершилась операция над видео'
+    UpdateVideoResolutionDTO:
+      type: object
+      properties:
+        width:
+          type: int
+          description: 'Ширина в пикселях'
+        height:
+          type: int
+          description: 'Высота в пикселях'

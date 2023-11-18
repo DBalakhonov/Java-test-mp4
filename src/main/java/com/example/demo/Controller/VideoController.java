@@ -6,6 +6,8 @@ import com.example.demo.DTO.UpdateOrDeleteVideoResult;
 import com.example.demo.DTO.VideoDTO;
 import com.example.demo.Exception.NotFoundException;
 import com.example.demo.Service.impl.VideoServiceImpl;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -19,6 +21,7 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/file")
+@Api(description = "Тестовый контроллер")
 public class VideoController {
     @Autowired
     private final VideoServiceImpl videoService;
@@ -29,6 +32,7 @@ public class VideoController {
 
 
     @PostMapping
+    @ApiOperation("Тестовый метод")
     public ResponseEntity<CreateVideoBackInfo> uploadVideo(@RequestPart MultipartFile video) {
         CreateVideoBackInfo backInfo = videoService.uploadVideo(video);
         return ResponseEntity.ok()
