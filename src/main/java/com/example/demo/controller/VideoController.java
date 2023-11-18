@@ -1,11 +1,11 @@
-package com.example.demo.Controller;
+package com.example.demo.controller;
 
-import com.example.demo.DTO.CreateVideoBackInfo;
-import com.example.demo.DTO.UpdateVideoResolutionDTO;
-import com.example.demo.DTO.UpdateOrDeleteVideoResult;
-import com.example.demo.DTO.VideoDTO;
-import com.example.demo.Exception.NotFoundException;
-import com.example.demo.Service.impl.VideoServiceImpl;
+import com.example.demo.dto.CreateVideoBackInfo;
+import com.example.demo.dto.UpdateVideoResolutionDTO;
+import com.example.demo.dto.UpdateOrDeleteVideoResult;
+import com.example.demo.dto.VideoDTO;
+import com.example.demo.exception.NotFoundException;
+import com.example.demo.service.impl.VideoServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

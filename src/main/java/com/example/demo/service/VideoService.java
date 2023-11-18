@@ -1,9 +1,9 @@
-package com.example.demo.Service;
+package com.example.demo.service;
 
-import com.example.demo.DTO.CreateVideoBackInfo;
-import com.example.demo.DTO.UpdateOrDeleteVideoResult;
-import com.example.demo.DTO.UpdateVideoResolutionDTO;
-import com.example.demo.DTO.VideoDTO;
+import com.example.demo.dto.CreateVideoBackInfo;
+import com.example.demo.dto.UpdateOrDeleteVideoResult;
+import com.example.demo.dto.UpdateVideoResolutionDTO;
+import com.example.demo.dto.VideoDTO;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;

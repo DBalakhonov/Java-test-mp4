@@ -1,8 +1,8 @@
 package com.example.demo.mapper;
 
-import com.example.demo.DTO.CreateVideoBackInfo;
-import com.example.demo.DTO.VideoDTO;
-import com.example.demo.Entity.VideoEntity;
+import com.example.demo.dto.CreateVideoBackInfo;
+import com.example.demo.dto.VideoDTO;
+import com.example.demo.entity.VideoEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;

@@ -1,13 +1,13 @@
-package com.example.demo.Service.impl;
+package com.example.demo.service.impl;
 
-import com.example.demo.DTO.CreateVideoBackInfo;
-import com.example.demo.DTO.UpdateOrDeleteVideoResult;
-import com.example.demo.DTO.UpdateVideoResolutionDTO;
-import com.example.demo.DTO.VideoDTO;
-import com.example.demo.Entity.VideoEntity;
-import com.example.demo.Exception.NotFoundException;
-import com.example.demo.Repository.VideoRepository;
-import com.example.demo.Service.VideoService;
+import com.example.demo.dto.CreateVideoBackInfo;
+import com.example.demo.dto.UpdateOrDeleteVideoResult;
+import com.example.demo.dto.UpdateVideoResolutionDTO;
+import com.example.demo.dto.VideoDTO;
+import com.example.demo.entity.VideoEntity;
+import com.example.demo.exception.NotFoundException;
+import com.example.demo.repository.VideoRepository;
+import com.example.demo.service.VideoService;
 import com.example.demo.mapper.VideoMapper;
 import net.bramp.ffmpeg.FFmpeg;
 import net.bramp.ffmpeg.FFmpegExecutor;
