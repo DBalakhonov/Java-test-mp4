@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.UUID;
 
-public interface VideoRepository extends CrudRepository<VideoEntity,UUID> {
+public interface VideoRepository extends CrudRepository<VideoEntity, UUID> {
 }

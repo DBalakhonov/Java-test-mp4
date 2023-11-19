@@ -6,9 +6,9 @@ import com.example.demo.dto.UpdateVideoResolutionDTO;
 import com.example.demo.dto.VideoDTO;
 import com.example.demo.entity.VideoEntity;
 import com.example.demo.exception.NotFoundException;
+import com.example.demo.mapper.VideoMapper;
 import com.example.demo.repository.VideoRepository;
 import com.example.demo.service.VideoService;
-import com.example.demo.mapper.VideoMapper;
 import net.bramp.ffmpeg.FFmpeg;
 import net.bramp.ffmpeg.FFmpegExecutor;
 import net.bramp.ffmpeg.FFprobe;
@@ -53,13 +53,7 @@ public class VideoServiceImpl implements VideoService {
         FFmpeg ffmpeg = new FFmpeg("F:/ffmpeg/bin/ffmpeg.exe");
         FFprobe ffprobe = new FFprobe("F:/ffmpeg/bin/ffprobe.exe");
         FFmpegProbeResult probeResult = ffprobe.probe(videoFilePath);
-        FFmpegBuilder builder = new FFmpegBuilder()
-                .setInput(probeResult)
-                .overrideOutputFiles(true)
-                .addOutput("F:/videos/output.mp4")
-                .setFormat("mp4")
-                .setVideoResolution(request.getWidth(), request.getHeight())
-                .setStrict(FFmpegBuilder.Strict.EXPERIMENTAL).done();
+        FFmpegBuilder builder = new FFmpegBuilder().setInput(probeResult).overrideOutputFiles(true).addOutput("F:/videos/output.mp4").setFormat("mp4").setVideoResolution(request.getWidth(), request.getHeight()).setStrict(FFmpegBuilder.Strict.EXPERIMENTAL).done();
         FFmpegExecutor executor = new FFmpegExecutor(ffmpeg, ffprobe);
         executor.createJob(builder).run();
         videoEntity.setProcessing(true);

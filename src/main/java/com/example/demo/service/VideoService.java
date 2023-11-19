@@ -11,7 +11,10 @@ import java.util.UUID;
 
 public interface VideoService {
     CreateVideoBackInfo uploadVideo(MultipartFile video);
+
     VideoDTO getVideoById(UUID id);
+
     UpdateOrDeleteVideoResult updateVideoResolution(UpdateVideoResolutionDTO request, UUID id) throws IOException;
+
     UpdateOrDeleteVideoResult deleteVideo(UUID id);
 }

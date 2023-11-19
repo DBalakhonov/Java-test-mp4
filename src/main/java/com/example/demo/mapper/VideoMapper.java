@@ -13,7 +13,8 @@ import java.util.UUID;
 
 @Component
 public class VideoMapper {
-    private static final Logger log  = LoggerFactory.getLogger(VideoMapper.class);
+    private static final Logger log = LoggerFactory.getLogger(VideoMapper.class);
+
     public VideoEntity addVideo(MultipartFile video) {
         VideoEntity videoEntity = new VideoEntity();
         try {
@@ -27,12 +28,14 @@ public class VideoMapper {
         }
         return videoEntity;
     }
-    public CreateVideoBackInfo addVideoBackInfo(VideoEntity videoEntity){
+
+    public CreateVideoBackInfo addVideoBackInfo(VideoEntity videoEntity) {
         CreateVideoBackInfo createVideoBack = new CreateVideoBackInfo();
         createVideoBack.setId(videoEntity.getId());
         return createVideoBack;
     }
-    public VideoDTO toVideoDTO(VideoEntity videoEntity){
+
+    public VideoDTO toVideoDTO(VideoEntity videoEntity) {
         VideoDTO videoDTO = new VideoDTO();
         videoDTO.setId(videoEntity.getId());
         videoDTO.setFilename(videoEntity.getFilename());
@@ -40,7 +43,8 @@ public class VideoMapper {
         videoDTO.setProcessingSuccess(videoEntity.getProcessingSuccess());
         return videoDTO;
     }
-    public VideoEntity updateVideoResolution(VideoEntity videoEntity,Boolean result,byte[] videoData){
+
+    public VideoEntity updateVideoResolution(VideoEntity videoEntity, Boolean result, byte[] videoData) {
         videoEntity.setVideo(videoData);
         videoEntity.setProcessingSuccess(result);
         videoEntity.setProcessing(false);

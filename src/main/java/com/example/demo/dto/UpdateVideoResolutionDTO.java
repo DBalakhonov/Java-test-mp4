@@ -8,9 +8,9 @@ import javax.validation.constraints.Min;
 @Data
 @Accessors(chain = true)
 public class UpdateVideoResolutionDTO {
-    @Min(21)
+    @Min(20)
     private int width;
-    @Min(21)
+    @Min(20)
     private int height;
 
     public int getWidth() {
