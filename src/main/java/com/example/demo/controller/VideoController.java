@@ -21,7 +21,6 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/file")
-@Api(description = "Тестовый контроллер")
 public class VideoController {
     @Autowired
     private final VideoServiceImpl videoService;
@@ -32,7 +31,6 @@ public class VideoController {
 
 
     @PostMapping
-    @ApiOperation("Тестовый метод")
     public ResponseEntity<CreateVideoBackInfo> uploadVideo(@RequestPart MultipartFile video) {
         CreateVideoBackInfo backInfo = videoService.uploadVideo(video);
         return ResponseEntity.ok()

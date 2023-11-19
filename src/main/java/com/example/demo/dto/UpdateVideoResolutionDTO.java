@@ -3,10 +3,14 @@ package com.example.demo.dto;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
+import javax.validation.constraints.Min;
+
 @Data
 @Accessors(chain = true)
 public class UpdateVideoResolutionDTO {
+    @Min(21)
     private int width;
+    @Min(21)
     private int height;
 
     public int getWidth() {

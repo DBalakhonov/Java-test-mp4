@@ -15,4 +15,11 @@ public class UpdateOrDeleteVideoResult {
     public void setSuccess(Boolean success) {
         this.success = success;
     }
+
+    @Override
+    public String toString() {
+        return "UpdateOrDeleteVideoResult{" +
+                "success=" + success +
+                '}';
+    }
 }

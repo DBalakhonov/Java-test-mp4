@@ -16,4 +16,11 @@ public class CreateVideoBackInfo {
     public void setId(UUID id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "CreateVideoBackInfo{" +
+                "id=" + id +
+                '}';
+    }
 }

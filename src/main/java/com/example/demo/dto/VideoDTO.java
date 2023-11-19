@@ -43,4 +43,14 @@ public class VideoDTO {
     public void setProcessingSuccess(Boolean processingSuccess) {
         this.processingSuccess = processingSuccess;
     }
+
+    @Override
+    public String toString() {
+        return "VideoDTO{" +
+                "id=" + id +
+                ", filename='" + filename + '\'' +
+                ", processing=" + processing +
+                ", processingSuccess=" + processingSuccess +
+                '}';
+    }
 }
